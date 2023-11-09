@@ -1,0 +1,11 @@
+username: cyan
+name: ts-init
+description: sample
+project: https://github.com/AtomiCloud/template.sulfone.typescript
+source: https://github.com/AtomiCloud/template.sulfone.typescript
+email: ernest@atomi.cloud
+tags: ["typescript"]
+readme: README.md
+processors:
+  - "kirinnee/dotnet-handlebar:11"
+plugins: []

@@ -1,0 +1,16 @@
+{
+  "name": "cyan",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/validator": "^13.11.6",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@atomicloud/cyan-sdk": "next",
+    "validator": "^13.11.0"
+  }
+}

@@ -1,0 +1,7 @@
+**/node_modules/**
+.git
+.idea
+.direnv
+.DS_Store
+.gitignore
+.pre-commit-config.yaml

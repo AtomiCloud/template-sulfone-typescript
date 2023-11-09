@@ -1,0 +1,41 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - "main"
+
+env:
+  # Docker
+  DOCKER_DOMAIN: ghcr.io
+  DOCKER_USER: ${{ github.actor }}
+  DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+  CYAN_PATH: cyan
+  CYAN_TOKEN: ${{ secrets.CYAN_TOKEN }}
+
+  # Helm
+
+jobs:
+  publish:
+    name: Pre-commit Check
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: rlespinasse/github-slug-action@v3.x
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-qemu-action@v3
+      - name: Install CyanPrint
+        run: ./scripts/setup-ubuntu.sh
+      - name: Publish CyanPrint
+        env:
+          DOMAIN: ${{ env.DOCKER_DOMAIN }}
+          GITHUB_REPO_REF: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_BRANCH: ${{ env.GITHUB_REF_SLUG }}
+
+          DOCKER_PASSWORD: ${{ env.DOCKER_PASSWORD }}
+          DOCKER_USER: ${{ env.DOCKER_USER }}
+
+          CYAN_TOKEN: ${{ env.CYAN_TOKEN }}
+          CYAN_PATH: ${{ env.CYAN_PATH }}
+        run: ./scripts/publish.sh
