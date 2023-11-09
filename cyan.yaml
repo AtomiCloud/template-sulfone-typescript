@@ -1,11 +1,11 @@
 username: cyan
 name: ts-init
-description: sample
+description: CyanPrint Template in Typescript to build CyanPrint Templates
 project: https://github.com/AtomiCloud/template.sulfone.typescript
 source: https://github.com/AtomiCloud/template.sulfone.typescript
 email: ernest@atomi.cloud
 tags: ["typescript"]
-readme: README.md
+readme: README.MD
 processors:
   - "kirinnee/dotnet-handlebar:11"
 plugins: []

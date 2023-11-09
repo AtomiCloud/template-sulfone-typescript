@@ -86,6 +86,6 @@ TEMPLATE_SHA=$(echo "$TEMPLATE_SHA" | sed 's/^sha256://')
 
 echo "🔨 Pushing to Cyanprint..."
 set -x
-cyanprint push template -c cyan.yaml --token "${CYAN_TOKEN}" "${BLOB_IMAGE_ID}" "${BLOB_SHA}" "${TEMPLATE_IMAGE_ID}" "${TEMPLATE_SHA}"
+cyanprint push template -c ./cyan.yaml --token "${CYAN_TOKEN}" "${BLOB_IMAGE_ID}" "${BLOB_SHA}" "${TEMPLATE_IMAGE_ID}" "${TEMPLATE_SHA}"
 set +x
 echo "✅ Pushed to Cyanprint!"

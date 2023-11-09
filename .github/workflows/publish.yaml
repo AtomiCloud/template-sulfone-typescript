@@ -17,7 +17,7 @@ env:
 
 jobs:
   publish:
-    name: Pre-commit Check
+    name: Publish
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
